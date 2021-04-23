@@ -1,0 +1,32 @@
+{% extends 'web/base.html' %}
+{% block body %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="col-md-8">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" name="firstname" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Lastname</label>
+            <input type="text" name="lastname" class="form-control" required="required"/>
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control">Register</button>
+        </div>
+        <br>
+        <br>
+        <h2 style="text-align:center">Or</h2>
+        <h3 style="text-align:center"><a href="{% url 'login' %}">Login</a></h3>
+    </div>
+</form>
+{% endblock %}
